@@ -8,15 +8,16 @@ import android.widget.TextView;
 import android.widget.Toast;
 
 import com.ofirbar.tingztheater.R;
-import java.util.ArrayList;
+
+import java.util.List;
 
 
-public class MovieArrayAdapter extends RecyclerView.Adapter<MovieArrayAdapter.ViewHolder> {
+public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.ViewHolder> {
 
     private int listItemLayout;
-    private ArrayList<Movie> movieList;
+    private List<Movie> movieList;
     // Constructor of the class
-    public MovieArrayAdapter(int layoutId, ArrayList<Movie> movieList) {
+    public MovieListAdapter(int layoutId, List<Movie> movieList) {
         listItemLayout = layoutId;
         this.movieList = movieList;
     }

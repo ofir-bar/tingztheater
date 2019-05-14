@@ -2,13 +2,13 @@ package com.ofirbar.tingztheater.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
-import android.support.v7.widget.DefaultItemAnimator;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
 import com.ofirbar.tingztheater.R;
+import com.ofirbar.tingztheater.persistence.DatabaseUtils;
 
-import java.util.ArrayList;
+import java.util.List;
 
 public class MoviesHomeActivity extends AppCompatActivity {
     RecyclerView recyclerView;
@@ -18,20 +18,13 @@ public class MoviesHomeActivity extends AppCompatActivity {
         super.onCreate(savedInstanceState);
         setContentView(R.layout.movies_home_activity);
 
-        // Initializing list view with the custom adapter
-        ArrayList<Movie> movieList = new ArrayList<Movie>();
+        List<Movie> moviesList = DatabaseUtils.getMovieDAOInstance(this).getAllMovies();
 
-        MovieArrayAdapter movieArrayAdapter = new MovieArrayAdapter(R.layout.list_item, movieList);
+        MovieListAdapter movieListAdapter = new MovieListAdapter(R.layout.list_item, moviesList);
         recyclerView = findViewById(R.id.item_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
-        recyclerView.setAdapter(movieArrayAdapter);
+        recyclerView.setAdapter(movieListAdapter);
 
-        // Populating list items
-        for(int i=0; i<40; i++) {
-            Movie someMovie = new Movie();
-            someMovie.setTitle("StarWars" + (i));
-            movieList.add(someMovie);
-        }
 
     }
 }
