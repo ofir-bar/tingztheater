@@ -15,6 +15,7 @@ public class NetworkUtils {
 
             retrofitMovies = new Retrofit.Builder()
                     .baseUrl(Constants.ANDROID_HIVE_MOVIES_BASE_API)
+                    .addConverterFactory(GsonConverterFactory.create())
                     .build();
         }
         return retrofitMovies;
