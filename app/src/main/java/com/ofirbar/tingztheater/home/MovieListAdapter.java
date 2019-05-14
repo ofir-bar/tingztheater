@@ -40,17 +40,17 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     // load data in each row element
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int listPosition) {
-        TextView item = holder.item;
-        item.setText(movieList.get(listPosition).getTitle());
+        TextView movieItem = holder.item;
+        movieItem.setText(movieList.get(listPosition).getTitle());
     }
 
     // Static inner class to initialize the views of rows
     static class ViewHolder extends RecyclerView.ViewHolder implements View.OnClickListener {
         public TextView item;
-        public ViewHolder(View itemView) {
-            super(itemView);
-            itemView.setOnClickListener(this);
-            item = itemView.findViewById(R.id.row_item);
+        public ViewHolder(View movieView) {
+            super(movieView);
+            movieView.setOnClickListener(this);
+            item = movieView.findViewById(R.id.row_item);
         }
         @Override
         public void onClick(View view) {

@@ -1,17 +1,14 @@
 package com.ofirbar.tingztheater.splash;
 
-import android.arch.persistence.room.Room;
 import android.content.Intent;
 import android.os.Bundle;
 import android.support.annotation.Nullable;
 import android.support.v7.app.AppCompatActivity;
-import android.util.Log;
 import android.widget.Toast;
 
 import com.ofirbar.tingztheater.R;
 import com.ofirbar.tingztheater.home.Movie;
 import com.ofirbar.tingztheater.home.MoviesHomeActivity;
-import com.ofirbar.tingztheater.persistence.AppDatabase;
 import com.ofirbar.tingztheater.persistence.DatabaseUtils;
 import com.ofirbar.tingztheater.persistence.MovieDAO;
 
