@@ -1,11 +1,15 @@
 package com.ofirbar.tingztheater.networking;
 
+import com.ofirbar.tingztheater.home.Movie;
+
+import java.util.List;
+
 import retrofit2.Call;
 import retrofit2.http.GET;
 
 public interface AndroidHiveMoviesApi {
 
-    @GET("movies/")
-    Call<MoviesListResponseSchema> fetchAllMovies();
+    @GET("movies.json")
+    Call<List<Movie>> getAllMovies();
 
 }

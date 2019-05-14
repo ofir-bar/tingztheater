@@ -1,18 +1,31 @@
 package com.ofirbar.tingztheater.home;
 
 import java.util.List;
+import com.google.gson.annotations.Expose;
+import com.google.gson.annotations.SerializedName;
 
 public class Movie {
 
+    @SerializedName("title")
+    @Expose
     private String title;
+    @SerializedName("image")
+    @Expose
     private String image;
+    @SerializedName("rating")
+    @Expose
     private Double rating;
+    @SerializedName("releaseYear")
+    @Expose
     private Integer releaseYear;
+    @SerializedName("genre")
+    @Expose
     private List<String> genre = null;
 
     public String getTitle() {
         return title;
     }
+
     public void setTitle(String title) {
         this.title = title;
     }
@@ -20,6 +33,7 @@ public class Movie {
     public String getImage() {
         return image;
     }
+
     public void setImage(String image) {
         this.image = image;
     }
@@ -27,6 +41,7 @@ public class Movie {
     public Double getRating() {
         return rating;
     }
+
     public void setRating(Double rating) {
         this.rating = rating;
     }
@@ -34,6 +49,7 @@ public class Movie {
     public Integer getReleaseYear() {
         return releaseYear;
     }
+
     public void setReleaseYear(Integer releaseYear) {
         this.releaseYear = releaseYear;
     }
@@ -41,7 +57,9 @@ public class Movie {
     public List<String> getGenre() {
         return genre;
     }
+
     public void setGenre(List<String> genre) {
         this.genre = genre;
     }
+
 }

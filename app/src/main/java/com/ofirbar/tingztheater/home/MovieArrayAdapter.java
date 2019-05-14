@@ -11,12 +11,12 @@ import com.ofirbar.tingztheater.R;
 import java.util.ArrayList;
 
 
-public class ItemArrayAdapter extends RecyclerView.Adapter<ItemArrayAdapter.ViewHolder> {
+public class MovieArrayAdapter extends RecyclerView.Adapter<MovieArrayAdapter.ViewHolder> {
 
     private int listItemLayout;
     private ArrayList<Movie> movieList;
     // Constructor of the class
-    public ItemArrayAdapter(int layoutId, ArrayList<Movie> movieList) {
+    public MovieArrayAdapter(int layoutId, ArrayList<Movie> movieList) {
         listItemLayout = layoutId;
         this.movieList = movieList;
     }
