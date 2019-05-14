@@ -29,17 +29,18 @@ public class SplashActivity extends AppCompatActivity {
         callToGetMovies.enqueue(new Callback<MoviesListResponseSchema>() {
             @Override
             public void onResponse(Call<MoviesListResponseSchema> call, Response<MoviesListResponseSchema> response) {
-                //TODO: Store the movies to a local DB
+                saveDataToLocalDb();
                 navigateToHomeScreen();
             }
 
             @Override
             public void onFailure(Call<MoviesListResponseSchema> call, Throwable t) {
                 Toast.makeText(context, R.string.splash_get_movies_network_error, Toast.LENGTH_SHORT).show();
+                finish();
             }
         });
     }
-
+    private void saveDataToLocalDb(){}
     private void navigateToHomeScreen(){
         startActivity(new Intent(this, MoviesHomeActivity.class));
         finish();
