@@ -14,17 +14,17 @@ import java.util.ArrayList;
 public class ItemArrayAdapter extends RecyclerView.Adapter<ItemArrayAdapter.ViewHolder> {
 
     private int listItemLayout;
-    private ArrayList<Item> itemList;
+    private ArrayList<Movie> movieList;
     // Constructor of the class
-    public ItemArrayAdapter(int layoutId, ArrayList<Item> itemList) {
+    public ItemArrayAdapter(int layoutId, ArrayList<Movie> movieList) {
         listItemLayout = layoutId;
-        this.itemList = itemList;
+        this.movieList = movieList;
     }
 
     // get the size of the list
     @Override
     public int getItemCount() {
-        return itemList == null ? 0 : itemList.size();
+        return movieList == null ? 0 : movieList.size();
     }
 
 
@@ -40,7 +40,7 @@ public class ItemArrayAdapter extends RecyclerView.Adapter<ItemArrayAdapter.View
     @Override
     public void onBindViewHolder(final ViewHolder holder, final int listPosition) {
         TextView item = holder.item;
-        item.setText(itemList.get(listPosition).getName());
+        item.setText(movieList.get(listPosition).getTitle());
     }
 
     // Static inner class to initialize the views of rows

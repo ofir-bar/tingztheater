@@ -8,19 +8,19 @@ public class MovieSchema {
 
     @SerializedName("title")
     @Expose
-    public String title;
+    private String title;
     @SerializedName("image")
     @Expose
-    public String image;
+    private String image;
     @SerializedName("rating")
     @Expose
-    public Double rating;
+    private Double rating;
     @SerializedName("releaseYear")
     @Expose
-    public Integer releaseYear;
+    private Integer releaseYear;
     @SerializedName("genre")
     @Expose
-    public List<String> genre = null;
+    private List<String> genre = null;
 
     public String getTitle() {
         return title;

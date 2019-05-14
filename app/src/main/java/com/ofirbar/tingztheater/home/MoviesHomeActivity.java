@@ -19,7 +19,7 @@ public class MoviesHomeActivity extends AppCompatActivity {
         setContentView(R.layout.movies_home_activity);
 
         // Initializing list view with the custom adapter
-        ArrayList<Item> itemList = new ArrayList<Item>();
+        ArrayList<Movie> itemList = new ArrayList<Movie>();
 
         ItemArrayAdapter itemArrayAdapter = new ItemArrayAdapter(R.layout.list_item, itemList);
         recyclerView = findViewById(R.id.item_list);
@@ -29,7 +29,9 @@ public class MoviesHomeActivity extends AppCompatActivity {
 
         // Populating list items
         for(int i=0; i<40; i++) {
-            itemList.add(new Item("Item " + i));
+            Movie someMovie = new Movie();
+            someMovie.setTitle("StarWars" + (i));
+            itemList.add(someMovie);
         }
 
     }
