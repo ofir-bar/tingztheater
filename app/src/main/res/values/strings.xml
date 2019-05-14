@@ -1,0 +1,7 @@
+<resources>
+    <string name="app_name">TingzTheater</string>
+
+    <string name="splash_get_movies_network_error">Check your internet connection or try again later..</string>
+
+
+</resources>
