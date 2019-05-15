@@ -34,14 +34,25 @@ public class SplashActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<Movie>>() {
             @Override
             public void onResponse(Call<List<Movie>> call, Response<List<Movie>> response) {
-                saveDataToLocalDb(response.body());
+
+                // Only save data locally if the local database doesn't exist.
+                if(!DatabaseUtils.doesDatabaseExist(SplashActivity.this)){
+                    saveDataToLocalDb(response.body());
+                }
                 navigateToHomeScreen();
             }
 
+            // In case the user already have the DB stored locally, he can open the app even if there's no internet connection.
+            // If the user don't have any local data and don't have internet connection the app will finish.
             @Override
             public void onFailure(Call<List<Movie>> call, Throwable t) {
-                Toast.makeText(SplashActivity.this, R.string.splash_get_movies_network_error, Toast.LENGTH_SHORT).show();
-                finish();
+                if(DatabaseUtils.doesDatabaseExist(SplashActivity.this)){
+                    navigateToHomeScreen();
+                }
+                else {
+                    Toast.makeText(SplashActivity.this, R.string.splash_get_movies_network_error, Toast.LENGTH_SHORT).show();
+                    finish();
+                }
             }
         });
     }
