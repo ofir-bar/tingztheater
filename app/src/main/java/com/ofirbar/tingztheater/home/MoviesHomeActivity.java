@@ -23,7 +23,7 @@ public class MoviesHomeActivity extends AppCompatActivity {
         moviesList = DatabaseUtils.getMovieDAOInstance(this).getAllMovies();
         sortMoviesByReleaseYearDescending();
 
-        MovieListAdapter movieListAdapter = new MovieListAdapter(R.layout.list_item, moviesList);
+        MovieListAdapter movieListAdapter = new MovieListAdapter(moviesList, this);
         recyclerView = findViewById(R.id.item_list);
         recyclerView.setLayoutManager(new LinearLayoutManager(this));
         recyclerView.setAdapter(movieListAdapter);
