@@ -7,7 +7,7 @@
     <string name="detailed_movie_image_default">Movie Image</string>
     <string name="detailed_movie_rating_default">Movie Rating</string>
     <string name="detailed_movie_release_year_default">Movie Release Year</string>
-    <string name="detailed_movie_genre_default">Movie Genre</string>
+    <string name="detailed_movie_genre_default">Unknown Genre</string>
 
     <string name="card_view_movie_title_default">Movie Title</string>
     <string name="card_view_movie_release_year_default">Release Year</string>

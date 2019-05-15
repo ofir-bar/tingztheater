@@ -2,6 +2,7 @@ package com.ofirbar.tingztheater.home;
 
 
 import android.content.Context;
+import android.content.Intent;
 import android.support.annotation.NonNull;
 import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
@@ -11,6 +12,7 @@ import android.widget.LinearLayout;
 import android.widget.TextView;
 
 import com.ofirbar.tingztheater.R;
+import com.ofirbar.tingztheater.detailed.MovieDetailedActivity;
 
 import java.util.List;
 
@@ -40,12 +42,26 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     }
 
     @Override
-    public void onBindViewHolder(@NonNull ViewHolder holder, final int position) {
+    public void onBindViewHolder(@NonNull final ViewHolder holder, final int position) {
         final Movie singleMovie = movieList.get(position);
         //Here we set the actual content of our items
         holder.movieTitle.setText(singleMovie.getTitle());
         holder.movieReleaseYear.setText(String.valueOf(singleMovie.getReleaseYear()));
         holder.movieRating.setText(String.valueOf(singleMovie.getRating()));
+        holder.itemView.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                Intent intent = new Intent(v.getContext(), MovieDetailedActivity.class);
+
+                //Gathers all details from the tapped airdrop and pass it to the airdrop-in detail activity
+                intent.putExtra(MovieDetailedActivity.MOVIE_TITLE, singleMovie.getTitle());
+                intent.putExtra(MovieDetailedActivity.MOVIE_RATING, singleMovie.getRating());
+                intent.putExtra(MovieDetailedActivity.MOVIE_RELEASE_YEAR, singleMovie.getReleaseYear());
+
+                //Start Activity with details on a specific airdrop
+                v.getContext().startActivity(intent);
+            }
+        });
     }
 
     @Override
