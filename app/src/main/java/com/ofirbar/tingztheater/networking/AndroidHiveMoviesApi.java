@@ -1,6 +1,6 @@
 package com.ofirbar.tingztheater.networking;
 
-import com.ofirbar.tingztheater.home.Movie;
+import com.ofirbar.tingztheater.persistence.Movie;
 
 import java.util.List;
 

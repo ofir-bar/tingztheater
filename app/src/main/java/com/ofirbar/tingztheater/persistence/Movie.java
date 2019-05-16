@@ -1,4 +1,4 @@
-package com.ofirbar.tingztheater.home;
+package com.ofirbar.tingztheater.persistence;
 
 import android.arch.persistence.room.Entity;
 import android.arch.persistence.room.PrimaryKey;

@@ -7,6 +7,7 @@ import android.support.v7.widget.RecyclerView;
 
 import com.ofirbar.tingztheater.R;
 import com.ofirbar.tingztheater.persistence.DatabaseUtils;
+import com.ofirbar.tingztheater.persistence.Movie;
 
 import java.util.Collections;
 import java.util.Comparator;

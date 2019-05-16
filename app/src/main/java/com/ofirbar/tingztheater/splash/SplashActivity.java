@@ -7,7 +7,7 @@ import android.support.v7.app.AppCompatActivity;
 import android.widget.Toast;
 
 import com.ofirbar.tingztheater.R;
-import com.ofirbar.tingztheater.home.Movie;
+import com.ofirbar.tingztheater.persistence.Movie;
 import com.ofirbar.tingztheater.home.MoviesHomeActivity;
 import com.ofirbar.tingztheater.persistence.DatabaseUtils;
 import com.ofirbar.tingztheater.persistence.MovieDAO;
@@ -70,6 +70,11 @@ public class SplashActivity extends AppCompatActivity {
         }
 
     }
+
+    private void fetchMovieImage(String movieImageURL){
+
+    }
+
     private void navigateToHomeScreen(){
         startActivity(new Intent(this, MoviesHomeActivity.class));
         finish();

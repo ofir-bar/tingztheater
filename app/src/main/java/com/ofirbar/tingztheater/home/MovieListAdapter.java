@@ -13,6 +13,7 @@ import android.widget.TextView;
 
 import com.ofirbar.tingztheater.R;
 import com.ofirbar.tingztheater.detailed.MovieDetailedActivity;
+import com.ofirbar.tingztheater.persistence.Movie;
 
 import java.util.List;
 
@@ -57,6 +58,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
                 intent.putExtra(MovieDetailedActivity.MOVIE_TITLE, singleMovie.getTitle());
                 intent.putExtra(MovieDetailedActivity.MOVIE_RATING, singleMovie.getRating());
                 intent.putExtra(MovieDetailedActivity.MOVIE_RELEASE_YEAR, singleMovie.getReleaseYear());
+                intent.putExtra(MovieDetailedActivity.MOVIE_IMAGE_URL, singleMovie.getImage());
 
                 //Start Activity with details on a specific airdrop
                 v.getContext().startActivity(intent);
