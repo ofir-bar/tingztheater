@@ -12,8 +12,9 @@ The app displays a list of cool movies. You can choose a moovie to get more info
 # Screenshots
 
 <div align="center">
-    <img src="https://i.imgur.com/Tw0m3xa.png" width="250px"</img>
-    <img src="https://i.imgur.com/q5Uts3C.png" width="250px"</img>
+    <img src="https://i.imgur.com/K8Dczya.png" width="250px"</img>
+    <img src="https://i.imgur.com/k2LUXNx.jpg" width="250px"</img>
+    <img src="https://i.imgur.com/t5CF1ne.jpg" width="250px"</img>
 </div>
 
 
