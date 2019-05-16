@@ -8,9 +8,11 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
+import android.widget.ImageView;
 import android.widget.LinearLayout;
 import android.widget.TextView;
 
+import com.bumptech.glide.Glide;
 import com.ofirbar.tingztheater.R;
 import com.ofirbar.tingztheater.detailed.MovieDetailedActivity;
 import com.ofirbar.tingztheater.persistence.Movie;
@@ -47,8 +49,10 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
         final Movie singleMovie = movieList.get(position);
         //Here we set the actual content of our items
         holder.movieTitle.setText(singleMovie.getTitle());
-        holder.movieReleaseYear.setText(String.valueOf(singleMovie.getReleaseYear()));
-        holder.movieRating.setText(String.valueOf(singleMovie.getRating()));
+        Glide.with(context).load(singleMovie.getImage()).into(holder.movieImage);
+        ;
+
+
         holder.itemView.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
@@ -72,9 +76,9 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
     }
 
     class ViewHolder extends RecyclerView.ViewHolder{
-        //
-        TextView movieTitle, movieReleaseYear, movieRating;
 
+        TextView movieTitle;
+        ImageView movieImage;
         LinearLayout linearLayoutCard;
 
         ViewHolder(View itemView) {
@@ -82,8 +86,7 @@ public class MovieListAdapter extends RecyclerView.Adapter<MovieListAdapter.View
 
             //connect our local objects with the actual widgets ID
             movieTitle = itemView.findViewById(R.id.card_view_movie_title);
-            movieReleaseYear = itemView.findViewById(R.id.card_view_movie_release_year);
-            movieRating = itemView.findViewById(R.id.card_view_movie_rating);
+            movieImage = itemView.findViewById(R.id.card_view_movie_image);
             linearLayoutCard = itemView.findViewById(R.id.movies_card_listview);
         }
     }

@@ -2,6 +2,7 @@ package com.ofirbar.tingztheater.home;
 
 import android.support.v7.app.AppCompatActivity;
 import android.os.Bundle;
+import android.support.v7.widget.GridLayoutManager;
 import android.support.v7.widget.LinearLayoutManager;
 import android.support.v7.widget.RecyclerView;
 
@@ -26,7 +27,7 @@ public class MoviesHomeActivity extends AppCompatActivity {
 
         MovieListAdapter movieListAdapter = new MovieListAdapter(moviesList, this);
         recyclerView = findViewById(R.id.item_list);
-        recyclerView.setLayoutManager(new LinearLayoutManager(this));
+        recyclerView.setLayoutManager(new GridLayoutManager(this, 2));
         recyclerView.setAdapter(movieListAdapter);
 
     }
